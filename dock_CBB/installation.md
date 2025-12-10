@@ -4,3 +4,8 @@
 sudo apt remove docker docker-engine docker.io containerd runc
 ```
 > this will remove old installed docker and its run time components
+
+## now update the packages 
+```bash
+sudo apt update && sudo apt upgrade -y
+```
