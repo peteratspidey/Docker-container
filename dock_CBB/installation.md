@@ -11,3 +11,6 @@ sudo apt update && sudo apt upgrade -y
 ```
 ## install the required packages
 ```bash
+sudo apt install -y curl ca-certificates gnupg lsb-release
+```
+> this will download the security and repo-handling packages for authencity and safety for the installtion of the packages or repo
