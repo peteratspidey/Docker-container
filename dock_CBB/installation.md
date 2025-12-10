@@ -1,9 +1,9 @@
-# installation steps for the docker as per the need for the bioinformatics tools
-## remove the old installed versions of docker with other files
+# installation steps for Docker as per the need for the bioinformatics tools
+## remove the old installed versions of Docker with other files
 ```bash
 sudo apt remove docker docker-engine docker.io containerd runc
 ```
-> this will remove old installed docker and its run time components
+> This will remove the old installed Docker and its runtime components
 
 ## now update the packages 
 ```bash
@@ -13,4 +13,4 @@ sudo apt update && sudo apt upgrade -y
 ```bash
 sudo apt install -y curl ca-certificates gnupg lsb-release
 ```
-> this will download the security and repo-handling packages for authencity and safety for the installtion of the packages or repo
+> This will download the security and repo-handling packages for authenticity and safety for the installation of the packages or repo
