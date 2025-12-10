@@ -9,3 +9,5 @@ sudo apt remove docker docker-engine docker.io containerd runc
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
+## install the required packages
+```bash
