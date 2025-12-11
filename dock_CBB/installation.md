@@ -14,3 +14,12 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y curl ca-certificates gnupg lsb-release
 ```
 > This will download the security and repo-handling packages for authenticity and safety for the installation of the packages or repo
+
+## add docker official gpg keys 
+```bash
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+```
+
+## add dokcer repo
