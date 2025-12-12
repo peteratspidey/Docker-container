@@ -59,4 +59,20 @@ ENV PATH="/opt/conda/envs/shigella-env/bin:${PATH}"
 ENTRYPOINT ["/bin/bash"]
 ```
 > this will creates a linux container , install mamba environment and build workflow environment
+save and exit
 
+## build docker image
+```bash
+docker build -t shigella-env:1.0 .
+```
+## exit container 
+```bash
+exit
+```
+# run tools
+## run the tools on real data
+```bash
+docker run -it \
+   -v /home/peter/shigella_data:/data \
+   shigella-env:1.0
+```
