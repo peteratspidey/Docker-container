@@ -34,9 +34,31 @@ echo \
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+
+## check the status of the docker daemon
+```bash
+sudo systemctl status docker --no-pager
+```
+
+## start the docker daemon if its not active and running
+```bash
+sudo systemctl start docker
+sudo systemctl enabele --now docker
+```
+## check the docker group is there or not 
+```bash
+id
+```
+> you will see something like this `137(docker)` , if nor found then use the following
+
+## add user into docker group
+```bash
+sudo usermod -aG docker $USER
+```
+
 ## verify installtion 
 ```bash
-sudo docker run hello-world
+docker run hello-world
 ```
 ## check the installed docker version \
 ```bash
