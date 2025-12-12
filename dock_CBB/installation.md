@@ -38,3 +38,7 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 ```bash
 sudo docker run hello-world
 ```
+## check the installed docker version \
+```bash
+docker --version
+```
