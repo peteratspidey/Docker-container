@@ -33,3 +33,30 @@ dependencies:
   - pandas
   - multiqc
 ```
+save this `ctrl + o `, enter
+close `ctrl + x`
+
+## create a docker file 
+```bash
+nano Dockerfile
+```
+## paste this into docker file
+```Dockerfile
+FROM mambaorg/micromamba:1.5.0
+
+# Copy environment definition
+COPY environment.yml /tmp/environment.yml
+
+# Create the conda/mamba environment
+RUN micromamba create -y -n shigella-env -f /tmp/environment.yml && \
+    micromamba clean --all --yes
+
+# Enable automatic environment activation
+ENV MAMBA_DOCKERFILE_ACTIVATE=1
+ENV PATH="/opt/conda/envs/shigella-env/bin:${PATH}"
+
+# Default entrypoint
+ENTRYPOINT ["/bin/bash"]
+```
+> this will creates a linux container , install mamba environment and build workflow environment
+
