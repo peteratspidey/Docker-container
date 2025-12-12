@@ -70,6 +70,12 @@ docker build -t shigella-env:1.0 .
 exit
 ```
 # run tools
+
+## run the docker environment
+```bash
+docker run -it --rm shigella-env:1.0
+```
+
 ## run the tools on real data
 ```bash
 docker run -it \
