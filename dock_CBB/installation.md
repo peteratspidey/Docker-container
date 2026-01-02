@@ -43,13 +43,13 @@ sudo systemctl status docker --no-pager
 ## start the docker daemon if its not active and running
 ```bash
 sudo systemctl start docker
-sudo systemctl enabele --now docker
+sudo systemctl enable --now docker
 ```
 ## check the docker group is there or not 
 ```bash
 id
 ```
-> you will see something like this `137(docker)` , if nor found then use the following
+> you will see something like this `137(docker)` , if not found then use the following
 
 ## add user into docker group
 ```bash
