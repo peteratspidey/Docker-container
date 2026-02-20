@@ -1,16 +1,18 @@
 # containers implement
-## create a environment directory 
+## create an environment directory 
+to keep configuration files
 ```bash
 mkdir ~/shigella-docker-env
 cd ~/shigella-docker-env
 ```
 
 ## create a .yml file (tool list)
+These files tell Docker which tools and packages are needed to install into the container environment
 ```bash
 nano environment.yml
 ```
-> this tells container to which tools to be installed 
-## paste this into tool list file 
+> This tells the container which tools to install 
+## paste this into the tool list file 
 ```yaml
 name: shigella-env
 channels:
@@ -35,8 +37,9 @@ dependencies:
 ```
 save this `ctrl + o `, enter
 close `ctrl + x`
-
-## create a docker file 
+This environment file lists all the tools u need and will be used inside the container
+## create a Docker file 
+this define how Docker builds ur custom image
 ```bash
 nano Dockerfile
 ```
@@ -52,18 +55,19 @@ RUN micromamba create -y -n shigella-env -f /tmp/environment.yml && \
     micromamba clean --all --yes
 
 # Enable automatic environment activation
+# set the container to automatically load the environment when it starts
 ENV MAMBA_DOCKERFILE_ACTIVATE=1
 ENV PATH="/opt/conda/envs/shigella-env/bin:${PATH}"
 
 # Default entrypoint
 ENTRYPOINT ["/bin/bash"]
 ```
-> this will creates a linux container , install mamba environment and build workflow environment
-save and exit
+> This will create a Linux container, install the mamba environment, and buildthe  workflow environment
+Save and exit
 
 ## build docker image
 ```bash
-docker build -t shigella-env:1.0 .
+docker build -t shigella-env:1.0.
 ```
 ## exit container 
 ```bash
@@ -71,7 +75,7 @@ exit
 ```
 # run tools
 
-## run the docker environment
+## run the Docker environment
 ```bash
 docker run -it --rm shigella-env:1.0
 ```
