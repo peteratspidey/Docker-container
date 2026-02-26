@@ -5,13 +5,13 @@ sudo apt update
 ```
 ## install docker.io
 ```bash
-sudo apt instal docker.io
+sudo apt install docker.io
 ```
-## enable docker from the systemctl service 
+## enable Docker from the systemctl service 
 ```bash
 sudo systemctl enable docker
 ```
-## start the docker in systemctl service
+## start the Docker in the systemctl service
 ```bash
 sudo systemctl start docker
 ```
@@ -20,11 +20,39 @@ sudo systemctl start docker
 ```bash
 sudo usermod -aG docker $USER
 ```
-> this will add user to the docker group so that it wont ask for the sudo password everytime
+> This will add the user to the Docker group so that it won't ask for the sudo password every time
 
 ## start new updated session 
 ```bash
 newusr docker
 ```
-> the usermod doesnot apply immediately , for that we need to logout and login -> instead we use `newusr docker`
-> 
+> The usermod does not apply immediately, for that we need to log out and log in -> instead we use `newusr docker`
+
+## pull image directly 
+```bash
+docker pull ubuntu:22.04
+```
+
+## run the interactive container 
+```bash
+docker run -it ubuntu:22.04
+```
+> This will open an interactive docker linux contiainer with basic installation 
+
+## to install other tools that might require run this 
+```bash
+apt update && apt install -y \
+gedit \
+curl \
+unzip \
+zip \
+tar \
+gzip \
+ca-certificates \
+build-essential \
+software-properties common \
+python3 \
+python3-pip \
+python3-venv \
+net-tools \
+```
