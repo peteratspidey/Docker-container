@@ -39,7 +39,7 @@ docker run -it ubuntu:22.04
 ```
 > This will open an interactive docker linux contiainer with basic installation 
 
-## to install other tools that might require run this 
+## to install other tools that might require run this (run this inside the container)
 ```bash
 apt update && apt install -y \
 gedit \
