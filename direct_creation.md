@@ -37,6 +37,11 @@ docker pull ubuntu:22.04
 ```bash
 docker run -it ubuntu:22.04
 ```
+
+## rename the docker container 
+### check the name of the container with the command
+```bash
+docker ps -a 
 > This will open an interactive docker linux contiainer with basic installation 
 
 ## to install other tools that might require run this (run this inside the container)
