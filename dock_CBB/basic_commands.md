@@ -5,6 +5,6 @@ id
 
 # to check the deployed containers 
 ```bash
-docker ps
+docker ps -a
 ```
 
