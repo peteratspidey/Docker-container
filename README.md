@@ -11,3 +11,8 @@ repo describes the steps to implement the docker containers and use it
                     3. dependencies
                     4. runtime
 ## types
+
+
+## install one script installation of docker container 
+run the given file `automated_docker_installation.sh`
+> make it executable first then run 
