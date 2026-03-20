@@ -54,7 +54,7 @@ apt update && apt upgrade -y && \
 apt install -y \
     curl unzip zip tar gzip git \
     ca-certificates build-essential nano \
-    python3 python3-pip python3-venv net-tools
+    python3 python3-pip python3-venv net-tools sudo
 "
 
 # -------------------------------
