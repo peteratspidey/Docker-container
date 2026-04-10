@@ -13,3 +13,20 @@ docker cp <bidya_cbb:/home/<user>/<file_name.txt> ~/home/<user>/Downloads
 ```bash
 docker run -v $(pwd):/data -it image_name
 ```
+## to migrate the docker container for 
+### make an image of the docker container 
+```bash
+docker commit <container_name> mytool:latest
+```
+or
+```bash
+docker commit <container_id> mytool:latest
+```
+
+### change the tag (if want to )
+```bash
+docker tag <container_id> mytool:latest
+```
+> mytool is the repo name , latest is the tag
+
+### now save the container image in tar to migrate
