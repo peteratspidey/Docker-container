@@ -1,63 +1,100 @@
-# create directly 
-## update the system
+# Create a Docker container directly
+
+## Update the system
+
 ```bash
 sudo apt update
 ```
-## install docker.io
+
+## Install Docker
+
 ```bash
 sudo apt install docker.io
 ```
-## enable Docker from the systemctl service 
+
+## Enable and start Docker
+
 ```bash
 sudo systemctl enable docker
-```
-## start the Docker in the systemctl service
-```bash
 sudo systemctl start docker
 ```
 
-## removing sudo application on each start up
-```bash
-sudo usermod -aG docker $USER
-```
-> This will add the user to the Docker group so that it won't ask for the sudo password every time
+## Run Docker without sudo
 
-## start new updated session 
 ```bash
-newusr docker
+sudo usermod -aG docker "$USER"
+newgrp docker
 ```
-> The usermod does not apply immediately, for that we need to log out and log in -> instead we use `newusr docker`
 
-## pull image directly 
+## Pull an image
+
 ```bash
 docker pull ubuntu:22.04
 ```
 
-## run the interactive container 
+## Create and run a named container
+
 ```bash
-docker run -it ubuntu:22.04
+docker run -it --name ubuntu_container ubuntu:22.04
 ```
 
-## rename the docker container 
-### check the name of the container with the command
-```bash
-docker ps -a 
-> This will open an interactive docker linux contiainer with basic installation 
+## List all containers
 
-## to install other tools that might require run this (run this inside the container)
+```bash
+docker ps -a
+```
+
+## Rename a container
+
+```bash
+docker rename old_name new_name
+```
+
+## Start and stop a container
+
+```bash
+docker start ubuntu_container
+docker stop ubuntu_container
+```
+
+## Open a terminal inside a running container
+
+```bash
+docker exec -it ubuntu_container bash
+```
+
+## Copy files between the computer and container
+
+```bash
+# Computer to container
+docker cp file.txt ubuntu_container:/root/
+
+# Container to computer
+docker cp ubuntu_container:/root/file.txt ./
+```
+
+## Copy or move normal files
+
+```bash
+cp source.txt copy.txt
+mv source.txt new_name.txt
+```
+
+## Install useful tools inside the container
+
 ```bash
 apt update && apt install -y \
-gedit \
-curl \
-unzip \
-zip \
-tar \
-gzip \
-ca-certificates \
-build-essential \
-software-properties common \
-python3 \
-python3-pip \
-python3-venv \
-net-tools \
+    gedit \
+    curl \
+    unzip \
+    zip \
+    tar \
+    gzip \
+    ca-certificates \
+    build-essential \
+    software-properties-common \
+    python3 \
+    python3-pip \
+    python3-venv \
+    net-tools
 ```
