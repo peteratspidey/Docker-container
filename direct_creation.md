@@ -33,16 +33,22 @@ newusr docker
 docker pull ubuntu:22.04
 ```
 
-## run the interactive container 
+## run the interactive container with a name
 ```bash
-docker run -it ubuntu:22.04
+docker run -it --name ubuntu-dev ubuntu:22.04
 ```
 
-## rename the docker container 
-### check the name of the container with the command
+## open the container again (only container name needed)
 ```bash
-docker ps -a 
-> This will open an interactive docker linux contiainer with basic installation 
+docker exec -it <container_name> bash
+```
+> Example: `docker exec -it ubuntu-dev bash`
+
+## check container names
+```bash
+docker ps -a
+```
+> This shows your container names so you can use them directly with `docker exec`.
 
 ## to install other tools that might require run this (run this inside the container)
 ```bash
